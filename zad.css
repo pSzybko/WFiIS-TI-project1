@@ -1,0 +1,155 @@
+html {
+    overflow-y: scroll;
+}
+b{
+    font-weight:900;
+    color:lightpink;
+}
+body{
+    margin: 0px;
+    background: url('img/background.jpg');
+    background-size: cover;
+    background-position: center center;
+    color: white;
+    font-family: 'Cardo', serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+header{
+    /* background-color: #376E6F; */
+    background-color:hsl(206, 28%, 26%, 0.5);
+}
+header::after{
+    content: '';
+    display: table;
+    clear: both;
+}
+#mainHeader{
+    width:90%;
+    margin: 0 auto;
+    padding-top:10px;
+}
+nav{
+    float:right;
+    padding-top: 30px;
+}
+nav ul{
+    list-style: none;
+}
+nav li{
+    display: inline-block;
+    margin-left: 30px;
+    position: relative;
+}
+nav a{
+    font-size: 40px;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: white;
+    font-family: 'Oswald', sans-serif;
+    cursor: pointer;
+}
+nav a:hover {
+    color:#2E151B;
+}
+nav a::before {
+    content: '';
+    display: block;
+    height: 5px;
+    background-color: #2E151B;
+  
+    position: absolute;
+    top: 0;
+    width: 0%;
+  
+    transition: all ease-in-out 300ms;
+}
+nav a:hover::before {
+    width: 100%;
+}
+.MyDivElement{
+    display: none;
+    background-color:#2F4454;
+    min-height: 80vh;
+    font-size: larger;
+    padding-left: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+#MyHomeScreen{
+    display: unset;
+    padding: 0 0 0 0;
+}
+#HomeScreen{
+    text-transform: uppercase;
+    font-size: 60px;
+    text-align: center;
+    margin-top: 15%;
+    margin-bottom: 15%;
+}
+#Wstep img{
+    float:left;
+    margin: 0px 15px 0px 0px;
+}
+#Wstep ul{
+    list-style-type: none;
+    width: 800px;
+    
+}
+#Wstep li{
+    border-style: solid;
+    background-color: #2E151B;
+    padding: 15px 15px 15px 15px;
+    overflow: auto;
+    vertical-align:middle;
+    margin-bottom: 20px;
+}
+#Teoria h3{
+    margin-top: 10px;
+    text-align: center;
+    border-style: solid;
+    background-color: #2E151B;
+    width:fit-content;
+    margin:0 auto;
+    padding: 10px;
+    font-family: "Latin Modern Math";
+}
+.formulas{
+    display:inline;
+}
+#formulasWrapper{
+    text-align: center;
+}
+.myButton{
+    border: none;
+	font-family: inherit;
+	font-size: inherit;
+	color: inherit;
+	background: none;
+	cursor: pointer;
+	padding: 10px 10px;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	font-weight: 400;
+	outline: none;
+	position: relative;
+}
+#Symulacje td{
+    padding-left: 15px;
+}
+#Symulacje #circMove input[type='range']{
+    width: 210px;
+    height: 30px;
+}
+#Autor a:link{
+    color:lightpink;
+}
+#Autor a:visited{
+    color: lightgray;
+}
+footer {
+    margin-top: auto;
+    margin-left: 10px;
+    font-size: small;
+}

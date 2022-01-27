@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pl-PL">
+    <head>
+        <title>Projekt 1 - ruch harmoniczny</title>
+        <meta charset="UTF-8" />
+        <link rel="StyleSheet" href="zad.css" type="text/css">
+        <script src="zad.js"></script>
+        <link href="https://fonts.googleapis.com/css?family=Cardo:400,700" rel="stylesheet">
+    </head>
+    <body>
+        <header>
+            <div id="mainHeader">
+                <a href="zad.html"><img src="img/logo.png" alt="brak logo :(" id="logo" width="194" height="107"/></a>
+                <nav>
+                    <ul>
+                        <li><a onclick="return showContent(event, 'Wstep');">Wstęp</a></li>
+                        <li><a onclick="return showContent(event, 'Teoria');">Teoria</a></li>
+                        <li><a onclick="return showContent(event, 'Symulacje');">Symulacje</a></li>
+                        <li><a onclick="return showContent(event, 'Autor');">Autor</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        <article>
+            <div class="MyDivElement" id="MyHomeScreen">
+                <div id="HomeScreen">
+                    <p>Ruch harmoniczny</p>
+                </div>
+            </div>
+            <div class="MyDivElement" id="Wstep">
+                <p><b>Ruch harmoniczny, ruch drgający, drganie, oscylacja </b>- jest to ruch zachodzący wokół stałego położenia równowagi.</p>
+                <p>Ruch taki może być <b>okresowy (periodyczny)</b>, czyli taki, w którym stan ciała powtarza się w jednakowych odstępach czasu, nazywanych <b>okresem drgań</b>.</p>
+                <h3>Przykłady ruchu harmonicznego:</h3>
+                <ul>
+                    <li>
+                        <img src="img/hustawka2.png" alt="brak zdjęcia :("/>
+                        <h3>Ruch huśtawki</h3>
+                        <p>Wyprowadzona z położenia równowagi huśtawka porusza się ruchem harmonicznym</p>
+                    </li>
+                    <li>
+                        <img width="263" height="178" src="img/wahadlo2.jpg" alt="brak zdjęcia :("/>
+                        <h3>Ruch wahadła zegara</h3>
+                        <p>Z punktu widzenia fizyki wahadło stanowi realizację oscylatora harmonicznego wymuszonego tłumionego.</p>
+                    </li>
+                    <li>
+                        <img src="img/struny2.jpg" alt="brak zdjęcia :("/>
+                        <h3>Drgania strun</h3>
+                        <p>Trącona struna wykonuje drgania wokół położenia równowagi</p>
+                    </li>
+                </ul>
+            </div>
+            <div class="MyDivElement" id="Teoria">
+                <p>W celu matematycznego opisania ruch harmonicznego naleleży wprowadzić pojęcie <b>okresu drgań</b>. W ten sposób określamy czas trwania jednego pełnego drgania.<br>Okres oznaczamy literą <b>T</b> i mierzymy w sekundach.</p>
+                <p>Zależność położenia punktu materialnego na osi x w chwili t możemy oznaczyć przez:</p>
+                <h3><i>x(t)=x(t+T)</i></h3>
+                <p>Powyższy zapis oznacza, że położenie punktu w chwili <i>t = t<sub>0</sub></i> i <i>t=t<sub>0</sub>+T</i> jest takie samo (<i>T</i> jest okresem drgań), czyli powtarza się co pewien czas równy <i>T</i>.</p>
+                <p>Drgania opisane poniższym równaniem zależności położenia punktu materialnego x od czasu t nazywamy <b>draniami harmonicznymi</b>.</p>
+                <div id="formulasWrapper"><h3 class="formulas"><i>x = Acos(ωt+φ)</i></h3> lub <h3 class="formulas"><i>x = Asin(ωt+φ<sub>s</sub>)</i></h3></div>
+                <p>gdzie:</p>
+                <ul>
+                    <li><i>A</i> - <b>amplituda drgań</b>, czyli największe wychylenie z położenia równowagi</li>
+                    <li><i>ω</i> - <b>częstotliwość (częstość) kątowa drgań, pulsacja</b></li>
+                    <li><i>ωt+φ</i> - <b>faza drgań</b>, w szczególności dla <i>t=0</i>, faza drgań jest równa <i>φ</i> - <b>faza początkowa</b>. Dla postaci sinusowej <i>φ<sub>s</sub>=φ+π/2.</i></li>
+                </ul>
+                <input type="button" id="draw1" value="Kliknij by narysować" onclick="initDraw()" class="myButton"/>
+                <br>
+                <canvas id="myCanvas" width="600" height="400" hidden></canvas>
+                <p>W ujęciu dynamicznym <b>ruch harmoniczny</b> to ruch, w którym działająca na ciało siła jest proporcjonalna do wychylenia i przeciwnie do niego zwrócona.<br>Składowa x wektora siły dana jest wzorem:</p>
+                <h3><i>F<sub>x</sub> = -kx</i></h3>
+                <p>gdzie:</p>
+                <ul>
+                    <li><i>k</i> - <b>stała sprężystości</b>, zależny od materiału (np. sprężyny)</li>
+                    <li><i>ω</i> - <b>składowa x siły</b> działającej na ciało</li>
+                    <li><i>x</i> - <b>współrzędna (wychylenie) ciała</b> na osi.</li>
+                </ul>
+                <h3><i>T = <sup>1</sup>&frasl;<sub>f</sub> = 2<sup>π</sup>&frasl;<sub>ω</sub></i></h3>
+                <p><b>Okres drgań harmonicznych </b>to czas, jaki jest potrzebny do zakończenia jednego pełnego cyklu drgania harmonicznego. Jest on odwrotnością <b>częstości kołowej</b> oznaczanej jako <b>f</b><br>W ruchu harmonicznym okres drgań jest dany wzorem:</p>
+                <p>Jesteśmy również w stanie znaleźć <b>prędkość i przyspieszenie </b>w ruchu harmonicznym.<br> Wzór na prędkość w ruchu harmonicznym:</p>
+                <h3><i>v = -Aωsin(ωt+φ)</i></h3>
+                <p>Wzór na przyspieszenie w ruchu harmonicznym:</p>
+                <h3><i>a = -Aω<sub>2</sub>cos(ωt+φ)</i></h3>
+            </div>
+            <div class="MyDivElement" id="Symulacje">
+                <p>Prezentowana wcześniej <b>symulacja ruchu harmonicznego</b> z możliwością wyboru amplitudy oraz okresu:</p>
+                <input type="button" id="draw2" value="Kliknij by narysować" onclick="initNewDraw()" class="myButton"/><br>
+                <div id="circMove" hidden>
+                    <table>
+                        <tr>
+                            <td><label for="amplituda">Wartość amplitudy</label></td>
+                            <td><input type="range" id="amplituda" min="1" max="8" value="0" onchange="stopMyInterval(); initDraw1()"/></td>
+                        </tr>
+                        <tr>
+                            <td><label for="okres">Wartość okresu</label></td>
+                            <td><input type="range" id="okres" min="1" max="9" value="5" onchange="stopMyInterval(); initDraw1()"/></td>
+                        </tr>
+                    </table>    
+                    <br>
+                    <canvas id="myCanvas2" width="600" height="400" ></canvas>
+                </div>
+                <p>Symulacja ukazująca analogię pomiędzy <b>drganiami harmonicznymi</b> a <b>ruchem po okręgu</b></p>
+                <input type="button" id="draw3" value="Kliknij by narysować" onclick="initDraw2()" class="myButton"/><br>
+                <canvas id="myCanvas3" width="1000" height="400" hidden></canvas>
+                <p>Symulacja ukazująca <b>ruch klocka na sprężynie</b></p>
+                <input type="button" id="draw4" value="Kliknij by narysować" onclick="initDraw3()" class="myButton"/><br>
+                <canvas id="myCanvas4" width="1000" height="400" hidden></canvas>
+            </div>
+            <div class="MyDivElement" id="Autor">
+                <h3>Projekt 1.  Strona WWW w języku HTML5 z wykorzystaniem skryptów JavaScript</h3>
+                <h3>Wykonał <b>Paweł Sipko</b> 400517, WFiIS, Informatyka Stosowana</h3>
+                <p>Źródła części merytorycznej:</p>
+                <ul>
+                    <li><a href="https://pl.wikipedia.org/wiki/Okres_(fizyka)">Wikipedia - okres</a></li>
+                    <li><a href="https://www.edukator.pl/resources/page/ruch-drgajacy-harmoniczny/1359">edukator - ruch drgający harmoniczny</a></li>
+                    <li><a href="https://www.medianauka.pl/ruch-harmoniczny">medianauka - ruch harmoniczny</a></li>
+                    <li><a href="https://pl.m.wikipedia.org/wiki/Ruch_harmoniczny">Wikipedia - ruch harmoniczny</a></li>
+                </ul>
+                <br>
+                <p>Projekt podlegał testowaniu pod przeglądarką <b>Google Chrome</b> oraz <b>Firefox</b></p>
+            </div>
+        </article>
+        <footer>
+            <h3>Paweł Sipko<br>WFiIS AGH 2021</h3>
+        </footer>
+    </body>
+</html>
